@@ -2,8 +2,9 @@ package com.example.footballleagueapi.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.footballleagueapi.R
 import com.example.footballleagueapi.adapter.FootballLeagueAdapter
 import com.example.footballleagueapi.model.FootballLeagueData
@@ -41,5 +42,17 @@ class MainActivity : AppCompatActivity() {
             items.add(FootballLeagueData(id[i], name[i], description[i], image.getResourceId(i, 0)))
         }
         image.recycle()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_league, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.search){
+            startActivity<SearchMatchActivity>()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

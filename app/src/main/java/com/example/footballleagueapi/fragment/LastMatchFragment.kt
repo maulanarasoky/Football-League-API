@@ -13,7 +13,6 @@ import com.example.footballleagueapi.adapter.FootballLeagueMatchAdapter
 import com.example.footballleagueapi.api.ApiRepository
 import com.example.footballleagueapi.interfaces.LeagueMatchView
 import com.example.footballleagueapi.model.FootballLeagueMatch
-import com.example.footballleagueapi.model.FootballTeamData
 import com.example.footballleagueapi.presenter.ListMatchPresenter
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_last_match.*

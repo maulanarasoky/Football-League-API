@@ -5,9 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.footballleagueapi.R
+import com.example.footballleagueapi.activity.DetailsMatchActivity
 import com.example.footballleagueapi.model.FootballLeagueMatch
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item_row_match.*
+import org.jetbrains.anko.startActivity
 
 class FootballLeagueMatchAdapter(
     private val dataMatch: List<FootballLeagueMatch>
@@ -29,13 +31,26 @@ class FootballLeagueMatchAdapter(
         LayoutContainer {
         fun bindItem(dataMatch: FootballLeagueMatch) {
             matchName.text = dataMatch.eventName
-            scoreHome.text = dataMatch.scoreHomeTeam.toString()
-            scoreAway.text = dataMatch.scoreAwayTeam.toString()
+
+            if(dataMatch.scoreHomeTeam != null && dataMatch.scoreAwayTeam != null){
+                scoreHome.text = dataMatch.scoreHomeTeam.toString()
+                scoreAway.text = dataMatch.scoreAwayTeam.toString()
+            }else{
+                scoreHome.text = "-"
+                scoreAway.text = "-"
+            }
 
             homeName.text = dataMatch.nameHomeTeam
             awayName.text = dataMatch.nameAwayTeam
 
             dateMatch.text = dataMatch.dateEvent
+
+
+            itemView.setOnClickListener{
+                itemView.context.startActivity<DetailsMatchActivity>(
+                    DetailsMatchActivity.dataParcel to dataMatch
+                )
+            }
         }
     }
 }

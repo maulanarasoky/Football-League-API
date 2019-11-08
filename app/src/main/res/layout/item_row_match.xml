@@ -21,103 +21,113 @@
 
         <TextView
             android:id="@+id/matchName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:gravity="center"
             android:textColor="@android:color/white"
             android:textSize="20sp"
             tools:text="Judul Match" />
 
         <RelativeLayout
-            android:id="@+id/relative1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/relativeParentData"
+            android:layout_width="match_parent"
             android:layout_below="@id/matchName"
-            android:layout_alignParentStart="true">
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/img_home_photo"
+            <RelativeLayout
+                android:id="@+id/relative1"
                 android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ball" />
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:id="@+id/img_home_photo"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ball" />
+
+                <TextView
+                    android:id="@+id/homeName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img_home_photo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:gravity="center"
+                    android:text="Home"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
 
             <TextView
-                android:id="@+id/homeName"
+                android:id="@+id/scoreHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/img_home_photo"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="8dp"
-                android:text="Home"
-                android:textColor="@android:color/white" />
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/scoreHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/matchName"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="8dp"
-            android:layout_toEndOf="@id/relative1"
-            android:text="1"
-            android:textColor="@android:color/white"
-            android:textSize="48sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="69dp"
-            android:text="-"
-            android:textColor="@android:color/white"
-            android:textSize="48sp" />
-
-        <TextView
-            android:id="@+id/scoreAway"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/matchName"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:layout_toStartOf="@id/relative2"
-            android:text="1"
-            android:textColor="@android:color/white"
-            android:textSize="48sp" />
-
-        <RelativeLayout
-            android:id="@+id/relative2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/matchName"
-            android:layout_alignParentEnd="true">
-
-            <ImageView
-                android:id="@+id/img_away_photo"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ball" />
-
-            <TextView
-                android:id="@+id/awayName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/img_away_photo"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/relative1"
+                android:text="1"
                 android:textColor="@android:color/white"
-                tools:text="Away" />
+                android:textSize="48sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="@android:color/white"
+                android:textSize="48sp" />
+
+            <TextView
+                android:id="@+id/scoreAway"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_toStartOf="@id/relative2"
+                android:text="1"
+                android:textColor="@android:color/white"
+                android:textSize="48sp" />
+
+            <RelativeLayout
+                android:id="@+id/relative2"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true">
+
+                <ImageView
+                    android:id="@+id/img_away_photo"
+                    android:layout_width="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ball" />
+
+                <TextView
+                    android:id="@+id/awayName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img_away_photo"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    tools:text="Away" />
 
 
+            </RelativeLayout>
         </RelativeLayout>
 
         <TextView
             android:id="@+id/dateMatch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/relative2"
+            android:layout_below="@id/relativeParentData"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
             android:textColor="@android:color/white"

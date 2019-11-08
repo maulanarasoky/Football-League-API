@@ -2,6 +2,8 @@ package com.example.footballleagueapi.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +22,7 @@ import com.example.footballleagueapi.presenter.DetailsLeaguePresenter
 import com.github.ybq.android.spinkit.style.Wave
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_details_league.*
+import org.jetbrains.anko.startActivity
 
 class DetailsLeagueActivity : AppCompatActivity(), DetailsLeagueView {
 

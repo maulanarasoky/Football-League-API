@@ -23,4 +23,12 @@ object TheSportDBApi {
     fun getNextMatch(idLeague : String?):String{
         return "${BuildConfig.BASE_URL}api/v1/json/${BuildConfig.TSDB_API_KEY}/eventsnextleague.php?id=${idLeague}"
     }
+
+    fun getDetailsMatch(idMatch : String?) : String{
+        return "${BuildConfig.BASE_URL}api/v1/json/${BuildConfig.TSDB_API_KEY}/lookupevent.php?id=${idMatch}"
+    }
+
+    fun searchMatch(matchName : String?) : String{
+        return "${BuildConfig.BASE_URL}api/v1/json/${BuildConfig.TSDB_API_KEY}/searchevents.php?e=${matchName}"
+    }
 }

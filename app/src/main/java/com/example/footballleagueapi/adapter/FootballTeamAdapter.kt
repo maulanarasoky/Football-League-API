@@ -8,11 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.footballleagueapi.R
-import com.example.footballleagueapi.activity.DetailsLeagueActivity
 import com.example.footballleagueapi.model.FootballTeamData
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.items_row_league.*
-import org.jetbrains.anko.startActivity
 
 class FootballTeamAdapter (private val context : Context, private val items : List<FootballTeamData>) : RecyclerView.Adapter<FootballTeamAdapter.ViewHolder>(){
 
